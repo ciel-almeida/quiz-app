@@ -1,0 +1,30 @@
+.conclusion-page {
+	width: 100%;
+	min-height: 100vh;
+	padding: 0 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.stats {
+}
+.stats__illustration {
+	/* padding: 0 10%; */
+	max-width: 150px;
+	margin-bottom: 1rem;
+	/* margin: 2rem auto 2rem; */
+}
+.score__message {
+	margin-top: 0.6rem;
+	margin-bottom: 2rem;
+}
+
+.score__button {
+	font-size: 1.4rem;
+	padding: 1.5rem 1rem;
+}
+.score-highlight {
+	color: rgb(147, 252, 81);
+}

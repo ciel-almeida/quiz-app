@@ -1,0 +1,28 @@
+form {
+	color: white;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+form button {
+	/* background-color: rgb(249, 178, 13); */
+	background-color: rgb(235, 195, 47);
+	/* background-color: rgb(113, 235, 47); */
+	color: rgb(28, 28, 58);
+	font-weight: bolder;
+	font-size: 1.2rem;
+	border-radius: 10px;
+	margin: 2rem auto;
+	width: auto;
+	padding: 0.8rem 2rem;
+	cursor: pointer;
+}
+
+form button:hover {
+	filter: brightness(0.85);
+}
+
+form button:active {
+	transform: scale(0.95);
+}

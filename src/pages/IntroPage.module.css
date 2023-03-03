@@ -1,0 +1,16 @@
+.intro-page {
+	width: 100%;
+	min-height: 100vh;
+	padding: 0 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.intro__illustration {
+	padding: 0 10%;
+	max-width: 800px;
+	margin: 2rem auto 2rem;
+	position: relative;
+}

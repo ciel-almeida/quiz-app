@@ -1,34 +1,62 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useContext, useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import reactLogo from './assets/react.svg';
+import './App.css';
+import Container from './components/Container';
+import IntroPage from './pages/IntroPage';
+import ConclusionPage from './pages/ConclusionPage';
+import QuestionPage from './pages/QuestionPage';
+import { QuizContext, QuizProvider } from './contexts/quiz-context';
+
+// function reducerMethod(state, action) {
+
+//   switch(action.type) {
+//     case 'ADD_ANSWER': {
+//       return ...state,
+//       break
+//     }
+//     case 'NEXT_ANSWER': {
+//       break
+//     }
+//     case 'PREVIOUS_ANSWER': {
+//       break
+//     }
+//     case '_ANSWER': {
+//       break
+//     }
+//     default: {
+//       return state;
+//     }
+//   }
+// }
 
 function App() {
-  const [count, setCount] = useState(0)
+	// const initialState = {
+	//   currentID: 1,
+	//   questionsInTotal: 5,
+	//   currentQuestion: '',
 
-  return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+	// }
+	// const [state, dispatch] = useReducer(reducerMethod, initialValue)
+	const quizCtx = useContext(QuizContext);
+	const { page, nickname } = quizCtx;
+	console.log('PAge: ', quizCtx.progress);
+	const [currentPage, setCurrentPage] = useState(page);
+	return (
+		<div className="App">
+			<Container>
+				<QuizProvider>
+					<BrowserRouter>
+						<Routes>
+							<Route path="/" element={<IntroPage />} />
+							<Route path="/quiz" element={<QuestionPage />} />
+							<Route path="/finish" element={<ConclusionPage />} />
+						</Routes>
+					</BrowserRouter>
+				</QuizProvider>
+			</Container>
+		</div>
+	);
 }
 
-export default App
+export default App;
